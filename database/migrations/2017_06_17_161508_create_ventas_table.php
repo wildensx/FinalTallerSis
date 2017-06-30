@@ -24,9 +24,9 @@ class CreateVentasTable extends Migration
             $table->float('total_venta');
             $table->integer('idcliente')->nullable()->unsigned();
             $table->foreign('idcliente')->references('idpersona')->on('personas');
-            //$table->integer('id')->nullable()->unsigned();
-            //$table->foreign('id')->references('id')->on('user');
-            //$table->timestamps();
+            $table->integer('idusuario')->nullable()->unsigned();
+            $table->foreign('idusuario')->references('id')->on('users');
+            $table->timestamps();
         });
     }
 

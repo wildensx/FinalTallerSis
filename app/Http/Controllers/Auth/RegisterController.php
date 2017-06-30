@@ -1,9 +1,9 @@
 <?php
 
-namespace App\Http\Controllers\Auth;
+namespace FinalSis\Http\Controllers\Auth;
 
-use App\User;
-use App\Http\Controllers\Controller;
+use FinalSis\User;
+use FinalSis\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
 
@@ -27,7 +27,7 @@ class RegisterController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/home';
+    protected $redirectTo = 'ventas/venta';
 
     /**
      * Create a new controller instance.
@@ -67,5 +67,9 @@ class RegisterController extends Controller
             'email' => $data['email'],
             'password' => bcrypt($data['password']),
         ]);
+    }
+    public function showRegistrationForm()
+    {
+        return redirect('login');
     }
 }

@@ -1,6 +1,6 @@
 <?php
 
-namespace App;
+namespace FinalSis;
 
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
@@ -14,6 +14,10 @@ class User extends Authenticatable
      *
      * @var array
      */
+    protected $table='users';
+
+    protected $primaryKey='id';
+
     protected $fillable = [
         'name', 'email', 'password',
     ];
