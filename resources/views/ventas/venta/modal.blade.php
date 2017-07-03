@@ -8,10 +8,10 @@
 						aria-label="Close">
 					<span aria-hidden="true">×</span>
 				</button>
-				<h4 class="modal-title">Cancelar venta</h4>
+				<h4 class="modal-title">Anular Factura</h4>
 			</div>
 			<div class="modal-body">
-				<p>Confirme si desea cancelar la venta</p>
+				<p>Confirme si desea anular la Factura</p>
 			</div>
 			<div class="modal-footer">
 				<button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>

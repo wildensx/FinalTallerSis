@@ -19,9 +19,9 @@ class CreateVentasTable extends Migration
             $table->string('serie_comprobante');
             $table->string('num_comprobante');
             $table->datetime('fecha_hora');
-            $table->float('impuesto');
+            $table->float('impuesto',10,2);
             $table->string('estado');
-            $table->float('total_venta');
+            $table->float('total_venta',10,2);
             $table->integer('idcliente')->nullable()->unsigned();
             $table->foreign('idcliente')->references('idpersona')->on('personas');
             $table->integer('idusuario')->nullable()->unsigned();

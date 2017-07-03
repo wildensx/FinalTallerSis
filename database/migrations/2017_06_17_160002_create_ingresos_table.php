@@ -19,7 +19,7 @@ class CreateIngresosTable extends Migration
             $table->string('serie_comprobante');
             $table->string('num_comprobante');
             $table->datetime('fecha_hora');
-            $table->float('impuesto');
+            $table->float('impuesto',10,2);
             $table->string('estado');
             $table->integer('idproveedor')->nullable()->unsigned();
             $table->foreign('idproveedor')->references('idpersona')->on('personas');

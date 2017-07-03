@@ -16,8 +16,8 @@ class CreateDetalleVentasTable extends Migration
         Schema::create('detalle_ventas', function (Blueprint $table) {
             $table->increments('iddetalle_venta');
             $table->integer('cantidad');
-            $table->float('precio_venta');
-            $table->float('descuento');
+            $table->float('precio_venta',10,2);
+            $table->float('descuento',10,2);
             $table->integer('idventa')->nullable()->unsigned();
             $table->foreign('idventa')->references('idventa')->on('ventas');
             $table->integer('idarticulo')->nullable()->unsigned();

@@ -35,8 +35,8 @@ class UsuarioController extends Controller
     public function store(UsuarioFormRequest $request)
     {
         $usuario = new User();
-        $usuario->name=$request->get('name');
-        $usuario->email=$request->get('email');
+        $usuario->name=strtoupper($request->get('name'));
+        $usuario->email=strtoupper($request->get('email'));
         $usuario->password=bcrypt($request->get('password'));
         $usuario->save();
         return Redirect::to('seguridad/usuario');
