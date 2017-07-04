@@ -44,10 +44,10 @@ class ArticuloController extends Controller
         $articulo = new Articulo;
         $articulo->idcategoria=$request->get('idcategoria');
         $articulo->codigo=$request->get('codigo');
-        $articulo->nombre=$request->get('nombre');
+        $articulo->nombre=strtoupper($request->get('nombre'));
         $articulo->stock=$request->get('stock');
-        $articulo->descripcion=$request->get('descripcion');
-        $articulo->estado='Activo';
+        $articulo->descripcion=strtoupper($request->get('descripcion'));
+        $articulo->estado=strtoupper('Activo');
 
         if(input::hasFile('imagen'))
         {
@@ -78,9 +78,9 @@ class ArticuloController extends Controller
         $articulo = Articulo::findOrFail($id);
         $articulo->idcategoria=$request->get('idcategoria');
         $articulo->codigo=$request->get('codigo');
-        $articulo->nombre=$request->get('nombre');
+        $articulo->nombre=strtoupper($request->get('nombre'));
         $articulo->stock=$request->get('stock');
-        $articulo->descripcion=$request->get('descripcion');
+        $articulo->descripcion=strtoupper($request->get('descripcion'));
         $articulo->estado='Activo';
 
         if(input::hasFile('imagen'))

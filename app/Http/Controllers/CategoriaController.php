@@ -37,8 +37,13 @@ class CategoriaController extends Controller
     public function store(CategoriaFormRequest $request)
     {
             $categoria = new Categoria;
+<<<<<<< HEAD
             $categoria->nombre=strtoupper($request->get('nombre'));
             $categoria->descripcion=$request->get('descripcion');
+=======
+            $categoria->nombre= strtoupper($request->get('nombre'));
+            $categoria->descripcion=strtoupper($request->get('descripcion'));
+>>>>>>> 9fdc71927eb457ebdeb51f23f1d0f0c77d18120c
             $categoria->condicion='1';
             $categoria->save();
             return Redirect::to('almacen/categoria');
@@ -59,8 +64,8 @@ class CategoriaController extends Controller
     public function update(CategoriaFormRequest $request, $id)
     {
             $categoria = Categoria::findOrFail($id);
-            $categoria->nombre=$request->get('nombre');
-            $categoria->descripcion=$request->get('descripcion');
+            $categoria->nombre=strtoupper($request->get('nombre'));
+            $categoria->descripcion=strtoupper($request->get('descripcion'));
             $categoria->update();
             return Redirect::to('almacen/categoria');
     }

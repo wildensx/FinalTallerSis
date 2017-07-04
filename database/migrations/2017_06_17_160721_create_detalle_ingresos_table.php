@@ -16,8 +16,8 @@ class CreateDetalleIngresosTable extends Migration
         Schema::create('detalle_ingresos', function (Blueprint $table) {
             $table->increments('iddetalle_ingreso');
             $table->integer('cantidad');
-            $table->float('precio_compra');
-            $table->float('precio_venta');
+            $table->float('precio_compra',10,2);
+            $table->float('precio_venta',10,2);
             $table->integer('idingreso')->nullable()->unsigned();
             $table->foreign('idingreso')->references('idingreso')->on('ingresos');
             $table->integer('idarticulo')->nullable()->unsigned();

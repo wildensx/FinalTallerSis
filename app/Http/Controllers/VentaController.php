@@ -58,13 +58,35 @@ class VentaController extends Controller
         {
             DB::beginTransaction();
             $venta = new Venta();
-            $venta->idcliente=$request->get('idcliente');
+
+            $venta->idcliente= $request->get('idcliente');
             $venta->tipo_comprobante=$request->get('tipo_comprobante');
             $venta->serie_comprobante=$request->get('serie_comprobante');
             $venta->num_comprobante=$request->get('num_comprobante');
             $venta->total_venta=$request->get('total_venta');
+
             $mytime = Carbon::now('America/Caracas');
+
             $venta->fecha_hora=$mytime->toDateTimeString();
+            //$venta->fecha_hora=$mytime->format('d/m/Y');
+            /*
+            $initialHour = Carbon::createFromFormat('d/m/Y',$mytime);
+            $warrantyHours = 24; //Horas para anular la Factura
+            $hours = 0;
+            $today = Carbon::now();
+            while ($initialHour != $today )
+            {
+                if ($initialHour != 0 && $initialHour != 25)
+                    $hours++;
+                    $initialHour->addHours();
+            }
+            if (($warrantyHours - $hours) < 0 ) dd('Ya no se puede anular la Factura');
+            else
+                {
+                if (($warrantyHours - $hours) == 0 ) dd('tiene una hora para anular la factura');
+                else dd('Queda '.($warrantyHours - $hours). ' horas');
+            }
+            */
             $venta->impuesto='13';
             $venta->estado='A';
             $venta->save();
@@ -117,7 +139,7 @@ class VentaController extends Controller
     public function destroy($id)
     {
         $venta = Venta::findOrFail($id);
-        $venta->Estado='C';
+        $venta->estado='C';
         $venta->update();
         return Redirect::to('ventas/venta');
 

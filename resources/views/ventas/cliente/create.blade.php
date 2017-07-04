@@ -31,7 +31,10 @@
 				<select name="tipo_documento" class="form-control">
 							<option value="CI">CI</option>
 							<option value="NIT">NIT</option>
+<<<<<<< HEAD
 
+=======
+>>>>>>> 9fdc71927eb457ebdeb51f23f1d0f0c77d18120c
 				</select>
 			</div>
 
