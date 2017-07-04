@@ -2,7 +2,10 @@
 @section ('contenido')
 	<div class="row">
 		<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-			<h3>Nuevo Venta</h3>
+			<h3>Nueva Venta
+				<br>
+				<a href="{{ route('cliente.create2') }}"><button class="btn btn-success">Nuevo Cliente</button></a>
+			</h3>
 			@if (count($errors)>0)
 				<div class="alert alert-danger">
 					<ul>
@@ -20,10 +23,11 @@
 		<div class="col-lg-12 col-sm-12 col-md-12 col-xs-12">
 			<div class="form-group">
 				<label for="proveedor">Cliente</label>
+
 				<select name="idcliente" id="idcliente" class="form-control selectpicker" data-live-search="true">
 					@foreach($personas as $persona)
 						<option value="{{$persona->idpersona}}">
-							{{$persona->nombre}}
+							{{$persona->num_documento}}
 						</option>
 						@endforeach
 				</select>

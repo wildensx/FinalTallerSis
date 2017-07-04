@@ -15,9 +15,7 @@
 					<th>Nombre</th>
 					<th>Tipo Doc.</th>
 					<th>Num Doc.</th>
-					<th>Teléfono</th>
-					<th>Email</th>
-					<th>Opciones</th>
+
 				</thead>
                @foreach ($personas as $per)
 				<tr>
