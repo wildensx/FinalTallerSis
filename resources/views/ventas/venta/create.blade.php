@@ -2,14 +2,14 @@
 @section ('contenido')
 	<div class="row">
 		<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-<<<<<<< HEAD
+
 			<h3>Nueva Venta
-				<br>
-				<a href="{{ route('cliente.create2') }}"><button class="btn btn-success">Nuevo Cliente</button></a>
+				<br><br>
+				<a href="{{ route('cliente.create') }}"><button class="btn btn-success">Nuevo Cliente</button></a>
 			</h3>
-=======
-			<h3>Nueva Venta</h3>
->>>>>>> 9fdc71927eb457ebdeb51f23f1d0f0c77d18120c
+
+
+
 			@if (count($errors)>0)
 				<div class="alert alert-danger">
 					<ul>
@@ -41,7 +41,7 @@
 			<div class="form-group">
 				<br>
 				<!--<a href="" class="btn btn-primary" target="_blank" >Nuevo Cliente</a>-->
-				<button href="" class="btn btn-primary" type="">Nuevo Cliente</button>
+
 			</div>
 		</div>
 

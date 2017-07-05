@@ -21,7 +21,7 @@ Route::resource('ventas/cliente','ClienteController');
 Route::resource('compras/proveedor','ProveedorController');
 Route::resource('compras/ingreso','IngresoController');
 Route::resource('ventas/venta','VentaController');
-Route::resource('ventas/cliente2','Cliente2Controller');
+
 Route::auth();
 Route::get('/logout', 'Auth\LoginController@logout');
 Route::resource('seguridad/usuario','UsuarioController');
