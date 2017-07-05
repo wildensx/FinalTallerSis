@@ -70,8 +70,13 @@ class RegisterController extends Controller
     }
    /* public function showRegistrationForm()
     {
+<<<<<<< HEAD
+        return redirect('register');
+    }*/
+=======
         return redirect('login');
     }
 
    */
+>>>>>>> 9fdc71927eb457ebdeb51f23f1d0f0c77d18120c
 }

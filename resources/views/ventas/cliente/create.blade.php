@@ -24,18 +24,17 @@
 			</div>
 		</div>
 
-		<div class="col-lg-6 col-sm-6 col-md-6 col-xs-12">
-			<div class="form-group">
-				<label for="direccion">Dirección</label>
-				<input type="text" name="direccion" value="{{old('direccion')}}" class="form-control" placeholder="Dirección...">
-			</div>
-		</div>
+
 		<div class="col-lg-6 col-sm-6 col-md-6 col-xs-12">
 			<div class="form-group">
 				<label>Documento</label>
 				<select name="tipo_documento" class="form-control">
 							<option value="CI">CI</option>
 							<option value="NIT">NIT</option>
+<<<<<<< HEAD
+
+=======
+>>>>>>> 9fdc71927eb457ebdeb51f23f1d0f0c77d18120c
 				</select>
 			</div>
 
@@ -46,18 +45,8 @@
 				<input type="text" name="num_documento" value="{{old('num_documento')}}" class="form-control" placeholder="Número de documento...">
 			</div>
 		</div>
-		<div class="col-lg-6 col-sm-6 col-md-6 col-xs-12">
-			<div class="form-group">
-				<label for="telefono">Teléfono</label>
-				<input type="text" name="telefono" value="{{old('telefono')}}" class="form-control" placeholder="Teléfono...">
-			</div>
-		</div>
-		<div class="col-lg-6 col-sm-6 col-md-6 col-xs-12">
-			<div class="form-group">
-				<label for="email">Email</label>
-				<input type="text" name="email" value="{{old('email')}}" class="form-control" placeholder="Email...">
-			</div>
-		</div>
+
+
 		<div class="col-lg-6 col-sm-6 col-md-6 col-xs-12">
 			<div class="form-group">
 				<button class="btn btn-primary" type="submit">Guardar</button>
