@@ -126,9 +126,9 @@ class VentaController extends Controller
         $venta = DB::table('ventas as v')
             ->join('personas as p','v.idcliente','=','p.idpersona')
             ->join('detalle_ventas as dv','v.idventa','=','dv.idventa')
-            ->select('v.idventa','v.fecha_hora','p.nombre','v.tipo_comprobante','v.serie_comprobante','v.num_comprobante','v.impuesto','v.estado','v.total_venta')
+            ->select('v.idventa','v.fecha_hora','p.nombre','p.num_documento','v.tipo_comprobante','v.serie_comprobante','v.num_comprobante','v.impuesto','v.estado','v.total_venta')
             ->where('v.idventa','=',$id)
-            ->groupBy('v.idventa','v.fecha_hora','p.nombre','v.tipo_comprobante','v.serie_comprobante','v.num_comprobante','v.impuesto','v.estado','v.total_venta')
+            ->groupBy('v.idventa','v.fecha_hora','p.nombre','p.num_documento','v.tipo_comprobante','v.serie_comprobante','v.num_comprobante','v.impuesto','v.estado','v.total_venta')
             ->first();
         $detalles = DB::table('detalle_ventas as d')
             ->join('articulos as a','d.idarticulo','=','a.idarticulo')
@@ -137,6 +137,7 @@ class VentaController extends Controller
             ->groupBy('a.nombre','d.cantidad','d.descuento','d.precio_venta')
             ->get();
         return view ("ventas.venta.show",["venta"=>$venta,"detalles"=>$detalles]);
+
     }
     public function destroy($id)
     {
@@ -146,4 +147,5 @@ class VentaController extends Controller
         return Redirect::to('ventas/venta');
 
     }
+
 }

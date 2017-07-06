@@ -1,37 +1,10 @@
 @extends ('layouts.admin')
-
 @section ('contenido')
 	<div class="row">
-
-		<div class="col-lg-12 col-sm-12 col-md-12 col-xs-12">
-			<div class="form-group">
-				<label><u>Datos de la Empresa</u></label>
-				<br>
-				<label>NIT</label>
-				<p>12496891</p>
-				<label>Direccion</label>
-				<p>Los Pinos Calle 28 #231</p>
-				<p>------------------------------------------------</p>
-			</div>
-		</div>
-	</div>
-	<div class="row">
-		<div class="col-lg-12 col-sm-12 col-md-12 col-xs-12">
-			<div class="form-group">
-				<label><u>Datos del Cliente</u></label>
-
-			</div>
-		</div>
 		<div class="col-lg-12 col-sm-12 col-md-12 col-xs-12">
 			<div class="form-group">
 				<label for="proveedor">Cliente</label>
 				<p>{{$venta->nombre}}</p>
-			</div>
-		</div>
-		<div class="col-lg-12 col-sm-12 col-md-12 col-xs-12">
-			<div class="form-group">
-				<label for="nit">NIT</label>
-				<p>{{$venta->num_documento}}</p>
 			</div>
 		</div>
 		<div class="col-lg-4 col-sm-4 col-md-4 col-xs-12">

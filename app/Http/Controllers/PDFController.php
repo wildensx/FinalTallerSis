@@ -2,7 +2,8 @@
 
 namespace FinalSis\Http\Controllers;
 
-use Illuminate\Http\Request;
+
+use DB;
 
 class PDFController extends Controller
 {

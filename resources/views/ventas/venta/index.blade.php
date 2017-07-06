@@ -32,6 +32,8 @@
 
 								<a href="" data-target="#modal-delete-{{$ven->idventa}}" data-toggle="modal"><button class="btn btn-danger">Anular</button></a>
 
+
+								<a href="{{URL::action('VentaController@invoice')}}"><button class="btn btn-primary">Factura</button></a>
 							</td>
 						</tr>
 						@include('ventas.venta.modal')
