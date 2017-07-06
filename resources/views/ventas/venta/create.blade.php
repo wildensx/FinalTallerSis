@@ -31,7 +31,7 @@
 				<select name="idcliente" id="idcliente" class="form-control selectpicker" data-live-search="true">
 					@foreach($personas as $persona)
 						<option value="{{$persona->idpersona}}">
-							{{$persona->num_documento}}
+							{{$persona->num_documento}} {{$persona->nombre}}
 						</option>
 						@endforeach
 				</select>
