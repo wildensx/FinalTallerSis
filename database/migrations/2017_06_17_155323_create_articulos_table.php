@@ -20,7 +20,7 @@ class CreateArticulosTable extends Migration
             $table->string ('nombre');
             $table->integer('stock');
             $table->string('descripcion');
-            $table->string('imagen');
+            $table->string('imagen')->nullable()->unsigned();
             $table->string('estado');
             $table->integer('idcategoria')->nullable()->unsigned();
             $table->foreign('idcategoria')->references('idcategoria')->on('categorias');

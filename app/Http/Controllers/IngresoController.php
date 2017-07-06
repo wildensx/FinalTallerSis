@@ -41,7 +41,7 @@ class IngresoController extends Controller
         $personas=DB::table('personas')->where('tipo_persona','=','Proveedor')->get();
         $articulos=DB::table('articulos as art')
             ->select(DB::raw("CONCAT(art.codigo,' ',art.nombre) AS articulo"),'art.idarticulo')
-            ->where('art.estado','=','Activo')
+            ->where('art.estado','=','ACTIVO')
             ->get();
         return view("compras.ingreso.create",["personas"=>$personas,"articulos"=>$articulos]);
     }
