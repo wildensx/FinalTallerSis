@@ -43,8 +43,6 @@ class VentaController extends Controller
     public function create()
     {
         $personas=DB::table('personas')->where('tipo_persona','=','Cliente')->get();
-
-
         $articulos=DB::table('articulos as art')
             ->join('detalle_ingresos as di','art.idarticulo','=','di.idarticulo')
             ->select(DB::raw("CONCAT(art.codigo,' ',art.nombre) AS articulo"),'art.idarticulo','art.stock',DB::raw('avg(di.precio_venta) as precio_promedio'))
@@ -70,25 +68,6 @@ class VentaController extends Controller
             $mytime = Carbon::now('America/Caracas');
 
             $venta->fecha_hora=$mytime->toDateTimeString();
-            //$venta->fecha_hora=$mytime->format('d/m/Y');
-            /*
-            $initialHour = Carbon::createFromFormat('d/m/Y',$mytime);
-            $warrantyHours = 24; //Horas para anular la Factura
-            $hours = 0;
-            $today = Carbon::now();
-            while ($initialHour != $today )
-            {
-                if ($initialHour != 0 && $initialHour != 25)
-                    $hours++;
-                    $initialHour->addHours();
-            }
-            if (($warrantyHours - $hours) < 0 ) dd('Ya no se puede anular la Factura');
-            else
-                {
-                if (($warrantyHours - $hours) == 0 ) dd('tiene una hora para anular la factura');
-                else dd('Queda '.($warrantyHours - $hours). ' horas');
-            }
-            */
             $venta->impuesto='13';
             $venta->estado='A';
             $venta->save();
@@ -136,7 +115,9 @@ class VentaController extends Controller
             ->where('d.idventa','=',$id)
             ->groupBy('a.nombre','d.cantidad','d.descuento','d.precio_venta')
             ->get();
-        return view ("ventas.venta.show",["venta"=>$venta,"detalles"=>$detalles]);
+         return view ("ventas.venta.show",["venta"=>$venta,"detalles"=>$detalles]);
+
+
     }
     public function destroy($id)
     {
@@ -145,5 +126,26 @@ class VentaController extends Controller
         $venta->update();
         return Redirect::to('ventas/venta');
 
+    }
+
+
+    public function crear_pdf($id)
+    {
+        $venta = DB::table('ventas as v')
+            ->join('personas as p','v.idcliente','=','p.idpersona')
+            ->join('detalle_ventas as dv','v.idventa','=','dv.idventa')
+            ->select('v.idventa','v.fecha_hora','p.nombre','p.idpersona','p.nombre','p.telefono','p.direccion','p.email', 'p.tipo_documento','p.num_documento','v.tipo_comprobante','v.serie_comprobante','v.num_comprobante','v.impuesto','v.estado','v.total_venta','dv.iddetalle_venta')
+            ->where('v.idventa','=',$id)
+            ->groupBy('v.idventa','v.fecha_hora','p.nombre','p.idpersona','p.nombre','p.telefono','p.direccion','p.email', 'p.tipo_documento','p.num_documento','v.tipo_comprobante','v.serie_comprobante','v.num_comprobante','v.impuesto','v.estado','v.total_venta','dv.iddetalle_venta')
+            ->first();
+        $detalles = DB::table('detalle_ventas as d')
+            ->join('articulos as a','d.idarticulo','=','a.idarticulo')
+            ->select('a.nombre as articulo','a.codigo','a.imagen','d.cantidad','d.descuento','d.precio_venta','d.created_at')
+            ->where('d.idventa','=',$id)
+            ->groupBy('a.nombre','a.codigo','a.imagen','d.cantidad','d.descuento','d.precio_venta','d.created_at')
+            ->get();
+        $date = date('Y-m-d');
+        $pdf=  \PDF::loadview('ventas.venta.reporte',["detalle"=>$detalles, "venta"=>$venta]) ->setPaper('letter', 'portrait');
+        return $pdf->stream("Factura de Venta # $id-$date-$id.pdf");
     }
 }

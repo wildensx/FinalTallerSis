@@ -29,6 +29,8 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 //Route::get('/{slug?}', 'HomeController@index')->name('home');
-Route::get('pdf', 'PDFController@invoice');
+Route::resource('/pdf','PdfController@index');
+Route::get('crear_reporte_porventa/{tipo}','PdfController@crear_reporte_porventa');
+Route::get('/ventas/venta/reporte/{id}', 'VentaController@crear_pdf');
 
 
