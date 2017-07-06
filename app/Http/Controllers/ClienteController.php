@@ -46,7 +46,7 @@ class ClienteController extends Controller
         $persona->telefono=$request->get('telefono');
         $persona->email=strtoupper($request->get('email'));
         $persona->save();
-        return Redirect::to('ventas/cliente');
+        return Redirect::to('ventas/venta/create');
 
     }
 

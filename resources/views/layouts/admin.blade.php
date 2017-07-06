@@ -34,7 +34,7 @@
           <!-- mini logo for sidebar mini 50x50 pixels -->
           <span class="logo-mini"><b>AD</b>V</span>
           <!-- logo for regular state and mobile devices -->
-          <span class="logo-lg"><b>ADVentas</b></span>
+          <span class="logo-lg"><b>Licoreria</b></span>
         </a>
 
         <!-- Header Navbar: style can be found in header.less -->
@@ -134,18 +134,6 @@
                 
               </ul>
             </li>
-             <li>
-              <ul>
-                <li><a href="{{ URL::to('pdf') }}"><i class="fa fa-info-circle"></i> PDF</a></li>
-              </ul>
-            </li>
-            <li>
-              <a href="#">
-                <i class="fa fa-info-circle"></i> <span>Acerca De...</span>
-                <small class="label pull-right bg-yellow">IT</small>
-              </a>
-            </li>
-                        
           </ul>
         </section>
         <!-- /.sidebar -->

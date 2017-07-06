@@ -49,21 +49,21 @@
 			<div class="form-group">
 				<label>Tipo Comprobante</label>
 				<select name="tipo_comprobante" class="form-control">
-					<option value="Recibo">Recibo</option>
-					<option value="Factura">Factura</option>
+					<option value="Recibo">Factura</option>
+					<option value="Factura">Recibo</option>
 				</select>
 			</div>
 
 		</div>
 		<div class="col-lg-4 col-sm-4 col-md-4 col-xs-12">
 			<div class="form-group">
-				<label for="serie_comprobante">Serie del comprobante</label>
+				<label for="serie_comprobante">Código de factura:</label>
 				<input type="text" name="serie_comprobante" value="{{old('serie_comprobante')}}" class="form-control" placeholder="Serie de comprobante...">
 			</div>
 		</div>
 		<div class="col-lg-4 col-sm-4 col-md-4 col-xs-12">
 			<div class="form-group">
-				<label for="num_comprobante">Número del comprobante</label>
+				<label for="num_comprobante">Número de factura:</label>
 				<input type="text" name="num_comprobante" requred value="{{old('num_comprobante')}}" class="form-control" placeholder="Num de comprobante...">
 			</div>
 		</div>
