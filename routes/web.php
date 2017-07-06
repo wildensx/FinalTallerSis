@@ -29,12 +29,12 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 //Route::get('/{slug?}', 'HomeController@index')->name('home');
-<<<<<<< HEAD
+
 Route::get('ventas/pdf', 'VentaController@invoice');
-=======
+
 Route::resource('/pdf','PdfController@index');
 Route::get('crear_reporte_porventa/{tipo}','PdfController@crear_reporte_porventa');
 Route::get('/ventas/venta/reporte/{id}', 'VentaController@crear_pdf');
->>>>>>> 981b20ff5174b630e1000d2e0a335e4629aa548a
+
 
 

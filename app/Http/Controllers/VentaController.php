@@ -115,12 +115,9 @@ class VentaController extends Controller
             ->where('d.idventa','=',$id)
             ->groupBy('a.nombre','d.cantidad','d.descuento','d.precio_venta')
             ->get();
-<<<<<<< HEAD
-        return view ("ventas.venta.show",["venta"=>$venta,"detalles"=>$detalles]);
-=======
-         return view ("ventas.venta.show",["venta"=>$venta,"detalles"=>$detalles]);
 
->>>>>>> 981b20ff5174b630e1000d2e0a335e4629aa548a
+        return view ("ventas.venta.show",["venta"=>$venta,"detalles"=>$detalles]);
+
 
     }
     public function destroy($id)
@@ -132,8 +129,6 @@ class VentaController extends Controller
 
     }
 
-<<<<<<< HEAD
-=======
 
     public function crear_pdf($id)
     {
@@ -154,5 +149,5 @@ class VentaController extends Controller
         $pdf=  \PDF::loadview('ventas.venta.reporte',["detalle"=>$detalles, "venta"=>$venta]) ->setPaper('letter', 'portrait');
         return $pdf->stream("Factura de Venta # $id-$date-$id.pdf");
     }
->>>>>>> 981b20ff5174b630e1000d2e0a335e4629aa548a
+
 }
