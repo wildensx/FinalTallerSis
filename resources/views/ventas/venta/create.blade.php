@@ -118,7 +118,7 @@
 							<th>Artículo</th>
 							<th>Cantidad</th>
 							<th>Precio venta</th>
-							<th>Descuento</th>
+							<th>Descuento %</th>
 							<th>Subtotal</th>
 						</thead>
 

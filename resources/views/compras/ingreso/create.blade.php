@@ -35,7 +35,7 @@
 				<select name="tipo_comprobante" class="form-control">
 					<option value="Recibo">Recibo</option>
 					<option value="Factura">Factura</option>
-					<option value="Boleta">Boleta</option>
+
 				</select>
 			</div>
 

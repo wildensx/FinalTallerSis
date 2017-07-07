@@ -43,13 +43,13 @@
 		</div>
 		<div class="col-lg-4 col-sm-4 col-md-4 col-xs-12">
 			<div class="form-group">
-				<label for="serie_comprobante">Serie del comprobante</label>
+				<label for="serie_comprobante">Serie de la factura</label>
 				<p>{{$venta->serie_comprobante}}</p>
 			</div>
 		</div>
 		<div class="col-lg-4 col-sm-4 col-md-4 col-xs-12">
 			<div class="form-group">
-				<label for="num_comprobante">Número del comprobante</label>
+				<label for="num_comprobante">Número de la factura</label>
 				<p>{{$venta->num_comprobante}}</p>
 			</div>
 		</div>

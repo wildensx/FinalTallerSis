@@ -14,7 +14,7 @@
 					<th>Fecha</th>
 					<th>Cliente</th>
 					<th>Codigo de Compra</th>
-					<th>Impuesto</th>
+					<th>Impuesto %</th>
 					<th>Total</th>
 					<th>Estado</th>
 					<th>Opciones</th>
@@ -33,7 +33,7 @@
 								<a href="" data-target="#modal-delete-{{$ven->idventa}}" data-toggle="modal"><button class="btn btn-danger">Anular</button></a>
 
 
-								<a href="{{URL::action('VentaController@invoice')}}"><button class="btn btn-primary">Factura</button></a>
+
 							</td>
 						</tr>
 						@include('ventas.venta.modal')

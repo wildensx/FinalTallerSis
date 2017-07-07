@@ -15,6 +15,7 @@
           <h5><center>La Paz S.A</center></h5>
           <h5><center>Casa Matriz</center></h5>
           <h5><center>Calle 28 Los Pinos</center></h5>
+          <h5><center>NIT: 12496891 </center></h5>
           <h5><center>Telf: 2727431</center></h5>
           <h5><center>La Paz - Bolivia</center></h5>
           <h5><center>FACTURA ORIGINAL</center></h5>
@@ -24,16 +25,16 @@
           <h5>Nit/Ci: {{$venta->num_documento}}</h5>
           <h5>Señor(es): {{$venta->nombre}}</h5>
           <h5>Detalle:</h5>
-<table>
+<table >
    <thead>
        <tr>
-            <th>Nombre</th>
-            <th>Imagen</th>
-            <th>Cantidad</th>
-            <th>Precio</th>
-            <th>% de descuento</th>
-            <th>Monto descontando</th>
-            <th>Subtotal</th>
+            <th>Nombre |</th>
+            <th>Imagen |</th>
+            <th>Cantidad |</th>
+            <th>Precio |</th>
+            <th>% de descuento |</th>
+            <th>Monto descontando |</th>
+            <th>Subtotal |</th>
           </tr>
         </thead>
    <tbody>

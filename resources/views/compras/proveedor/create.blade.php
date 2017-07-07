@@ -36,7 +36,7 @@
 				<select name="tipo_documento" class="form-control">
 					<option value="CI">CI</option>
 					<option value="NIT">NIT</option>
-					<option value="PAS">Pasaporte</option>
+
 				</select>
 			</div>
 
